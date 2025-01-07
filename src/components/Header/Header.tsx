@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button.tsx"
 import { Cart } from "../Cart/Cart.tsx"
 import s from "./Header.module.css"
 
@@ -7,6 +8,9 @@ export const Header = () => {
       <div className={s.container}>
         <h3>logotype</h3>
         <Cart />
+        <Button asChild>
+          <a href="/sign-up">Sign Up</a>
+        </Button>
       </div>
     </div>
   )
