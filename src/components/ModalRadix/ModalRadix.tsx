@@ -1,19 +1,19 @@
-import * as Dialog from "@radix-ui/react-dialog"
-import { Cross2Icon } from "@radix-ui/react-icons"
-import clsx from "clsx"
-import type { ComponentPropsWithoutRef } from "react"
-import s from "./ModalRadix.module.css"
+import * as Dialog from "@radix-ui/react-dialog";
+import { Cross2Icon } from "@radix-ui/react-icons";
+import s from "./ModalRadix.module.css";
+import { ComponentPropsWithoutRef } from "react";
+import clsx from "clsx";
 
-type ModalSize = "lg" | "md" | "sm"
+type ModalSize = 'lg' | 'md' | 'sm'
 
 type Props = {
   open: boolean
-  onClose: () => void
-  size?: ModalSize
+  onClose?: () => void
   modalTitle: string
-} & ComponentPropsWithoutRef<"div">
+  size?: ModalSize
+} & ComponentPropsWithoutRef<'div'>
 
-export const ModalRadix = ({ modalTitle, children, open, onClose, size = "md", className, ...rest }: Props) => (
+export const ModalRadix = ({ modalTitle, onClose, children, open, size = 'md', className, ...rest }: Props) => (
   <Dialog.Root open={open} onOpenChange={onClose} {...rest}>
     <Dialog.Portal>
       <Dialog.Overlay className={s.Overlay} />

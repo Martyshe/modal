@@ -1,11 +1,13 @@
-import { Header } from "./components/Header/Header.tsx"
-import { Posts } from "./components/Posts/Posts.tsx"
+import Header from "./components/header/Header"
+import { Posts } from "./components/posts/Posts"
+
 
 function App() {
   return (
     <div>
-      <Header />
-      <Posts />
+      <Header/>
+        <Posts/>
+
     </div>
   )
 }

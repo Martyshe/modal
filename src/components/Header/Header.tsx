@@ -1,17 +1,16 @@
-import { Button } from "../Button/Button.tsx"
-import { Cart } from "../Cart/Cart.tsx"
-import s from "./Header.module.css"
+import Cart from '../Cart/Cart'
+import { ModalRadix } from '../ModalRadix/ModalRadix'
+import { Posts } from '../posts/Posts'
+import s from './Header.module.css'
 
-export const Header = () => {
+export default function Header() {
   return (
     <div className={s.headerWrapper}>
-      <div className={s.container}>
-        <h3>logotype</h3>
-        <Cart />
-        <Button asChild>
-          <a href="/sign-up">Sign Up</a>
-        </Button>
-      </div>
+  <div className={s.container}>
+        <div>logotip</div>
+        <Cart/>
     </div>
+    </div>
+  
   )
 }
