@@ -6,14 +6,23 @@ import clsx from "clsx";
 
 type ModalSize = 'lg' | 'md' | 'sm'
 
-type Props = {
+export type ModalRadixProps = {
+  /** The controlled open state of the Modal */
   open: boolean
-  onClose?: () => void
+  /** Close modal handler */
+  onClose: () => void
+  /** Modal title */
   modalTitle: string
+  /** 'sm' | 'md' | 'lg':
+   * sm - 367px,
+   * md - 532px,
+   * lg - 764px.
+   * Default: 'md'
+   * For other values use className */
   size?: ModalSize
 } & ComponentPropsWithoutRef<'div'>
 
-export const ModalRadix = ({ modalTitle, onClose, children, open, size = 'md', className, ...rest }: Props) => (
+export const ModalRadix = ({ modalTitle, onClose, children, open, size = 'md', className, ...rest }: ModalRadixProps) => (
   <Dialog.Root open={open} onOpenChange={onClose} {...rest}>
     <Dialog.Portal>
       <Dialog.Overlay className={s.Overlay} />
